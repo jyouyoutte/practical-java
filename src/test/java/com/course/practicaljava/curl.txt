@@ -4,3 +4,6 @@ curl -X GET -i http://localhost:8001/api/car/v1/random --data '
 
 -- echo Car
 curl -i -X POST -H 'Content-Type: application/json' -d '{"brand" : "Mitsubushi","type" : "Sedan","color" : "White"}' http://localhost:8001/api/car/v1/echo
+
+--Random Cars
+curl -X GET -i http://localhost:8001/api/car/v1/random-cars --data '

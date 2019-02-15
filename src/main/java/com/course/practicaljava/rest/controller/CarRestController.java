@@ -1,5 +1,9 @@
 package com.course.practicaljava.rest.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +22,7 @@ import com.course.practicaljava.service.CarService;
 public class CarRestController {
 	
 		private Logger log = LoggerFactory.getLogger(CarRestController.class);
+		private Random random = new Random();
 
 		@Autowired
 		private CarService carService;
@@ -32,5 +37,15 @@ public class CarRestController {
 		public String echo (@RequestBody Car car) {
 			log.info("The car is : " + car);		
 			return car.toString();			
+		}
+		
+		@GetMapping(path = "/random-cars", produces = MediaType.APPLICATION_JSON_VALUE)
+		public List<Car> randomCars(){
+			var result = new ArrayList<Car>();
+			for (int i = 0; i < random.nextInt(6); i++) {
+				result.add(carService.generateCar());
+			}
+			return result;
+			
 		}
 }

@@ -1,13 +1,23 @@
 package com.course.practicaljava.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Car {
 	private String brand, color, type;
 	private int price;
 	private boolean available;
 	private Date firstReleaseDate;
+	private List<String> additionalFeatures;
 	
+	public List<String> getAdditionalFeatures() {
+		return additionalFeatures;
+	}
+
+	public void setAdditionalFeatures(List<String> additionalFeatures) {
+		this.additionalFeatures = additionalFeatures;
+	}
+
 	public Car(){}
 
 	public Car(String brand, String color, String type) {
@@ -17,11 +27,9 @@ public class Car {
 		this.type = type;
 	}
 
+	
 	public Car(String brand, String color, String type, int price, boolean available, Date firstReleaseDate) {
-		super();
-		this.brand = brand;
-		this.color = color;
-		this.type = type;
+		this(brand, color, type);	
 		this.price = price;
 		this.available = available;
 		this.firstReleaseDate = firstReleaseDate;
