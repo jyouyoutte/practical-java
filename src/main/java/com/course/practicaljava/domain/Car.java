@@ -10,14 +10,9 @@ public class Car {
 	private Date firstReleaseDate;
 	private List<String> additionalFeatures;
 	
-	public List<String> getAdditionalFeatures() {
-		return additionalFeatures;
-	}
-
-	public void setAdditionalFeatures(List<String> additionalFeatures) {
-		this.additionalFeatures = additionalFeatures;
-	}
-
+	private Engine engine;
+	private List<Tyre> compatibleTyres;
+	
 	public Car(){}
 
 	public Car(String brand, String color, String type) {
@@ -27,12 +22,15 @@ public class Car {
 		this.type = type;
 	}
 
-	
 	public Car(String brand, String color, String type, int price, boolean available, Date firstReleaseDate) {
 		this(brand, color, type);	
 		this.price = price;
 		this.available = available;
 		this.firstReleaseDate = firstReleaseDate;
+	}
+
+	public List<String> getAdditionalFeatures() {
+		return additionalFeatures;
 	}
 
 	public String getBrand() {
@@ -43,10 +41,18 @@ public class Car {
 		return color;
 	}
 
+	public List<Tyre> getCompatibleTyres() {
+		return compatibleTyres;
+	}
+
+	public Engine getEngine() {
+		return engine;
+	}
+
 	public Date getfirstReleaseDate() {
 		return firstReleaseDate;
 	}
-
+	
 	public int getPrice() {
 		return price;
 	}
@@ -57,6 +63,10 @@ public class Car {
 
 	public boolean isAvailable() {
 		return available;
+	}
+
+	public void setAdditionalFeatures(List<String> additionalFeatures) {
+		this.additionalFeatures = additionalFeatures;
 	}
 
 	public void setAvailable(boolean available) {
@@ -71,7 +81,19 @@ public class Car {
 		this.color = color;
 	}
 
+	public void setCompatibleTyres(List<Tyre> compatibleTyres) {
+		this.compatibleTyres = compatibleTyres;
+	}
+
+	public void setEngine(Engine engine) {
+		this.engine = engine;
+	}
+
 	public void setfirstReleaseDate(Date firstReleaseDate) {
+		this.firstReleaseDate = firstReleaseDate;
+	}
+
+	public void setFirstReleaseDate(Date firstReleaseDate) {
 		this.firstReleaseDate = firstReleaseDate;
 	}
 
