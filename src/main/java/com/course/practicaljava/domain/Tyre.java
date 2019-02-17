@@ -1,8 +1,12 @@
 package com.course.practicaljava.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Tyre {
-	String manufacturer;
-	int price, size;
+	private String manufacturer;
+	@JsonProperty("diameter")
+	private  int price;
+	private int size;
 	
 	public Tyre() {
 		super();

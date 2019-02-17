@@ -1,4 +1,4 @@
--- Randm car
+-- Random car
 curl -X GET -i http://localhost:8001/api/car/v1/random --data '
 '
 

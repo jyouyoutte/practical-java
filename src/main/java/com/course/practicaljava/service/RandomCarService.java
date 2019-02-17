@@ -48,6 +48,10 @@ public class RandomCarService implements CarService {
 		car.setAdditionalFeatures(additionalFeatures);		
 		car.setEngine(randomEngine);
 		car.setCompatibleTyres(randomCompatibleTyres);
+		
+		if(random.nextBoolean())
+			car.setSecretFeature("can fly");
+					
 		return 	car;
 		 
 	}

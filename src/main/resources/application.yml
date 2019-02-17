@@ -6,3 +6,6 @@ spring:
   devtools:
     restart:
       enabled: true
+      
+  jackson:
+    property-naming-strategy: SNAKE_CASE
